@@ -34,7 +34,7 @@
 
 % serif
 % \usepackage{CormorantGaramond}
-% \usepackage{charter}
+\usepackage{charter}
 
 
 \pagestyle{fancy}
@@ -86,6 +86,15 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+% Variant: left side shows "Lab | Institution" inline
+\newcommand{\resumeSubheadingInline}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      	\textbf{#1}, \emph{#2} & \textbf{\small #3} \\
+      	\textit{\small#4} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -123,11 +132,13 @@
 % \end{tabular*}
 
 \begin{center}
-    {\Huge \scshape First Last} \\ \vspace{1pt}
-    123 Street Name, Town, State 12345 \\ \vspace{1pt}
-    \small \raisebox{-0.1\height}\faPhone\ 123-456-7890 ~ \href{mailto:x@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{email@gmail.com}} ~ 
-    \href{https://linkedin.com/in//}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/username}}  ~
-    \href{https://github.com/}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/username}}
+    {\Huge \scshape David Hyunyoo Jang} \\ \vspace{1pt}
+    % 123 Street Name, Town, State 12345 \\ \vspace{1pt}
+    \small 
+    % \raisebox{-0.1\height}\faPhone\ 123-456-7890 ~ 
+    \href{mailto:hwjang00@snu.ac.kr}{\raisebox{-0.2\height}\faEnvelope\  \underline{hwjang00@snu.ac.kr}} ~ 
+    \href{https://linkedin.com/in/daylight00/}{\raisebox{-0.2\height}\faLinkedin\ \underline{daylight00}}  ~
+    \href{https://github.com/daylight-00}{\raisebox{-0.2\height}\faGithub\ \underline{daylight-00}}
     \vspace{-8pt}
 \end{center}
 
@@ -136,86 +147,107 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {State University}{Sep. 2017 -- May 2021}
-      {Bachelor of Science in Computer Science}{City, State}
+      {Seoul National University}{Mar 2022 -- Feb 2028}
+      {PharmD}{Seoul, South Korea}
+      \resumeItemListStart
+        \resumeItem{Selected Coursework} 
+          {Biochemistry · Pharmaceutical Statistics · Drug Delivery Systems}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Korea University}{Mar 2019 -- Aug 2021}
+      {B.Eng. in Materials Science and Engineering}{Seoul, South Korea}
+      \resumeItemListStart
+        \resumeItem{Selected Coursework}
+          {Organic Nanomaterials · Fundamentals of Data Science}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 %------RELEVANT COURSEWORK-------
-\section{Relevant Coursework}
-    %\resumeSubHeadingListStart
-        \begin{multicols}{4}
-            \begin{itemize}[itemsep=-5pt, parsep=3pt]
-                \item\small Data Structures
-                \item Software Methodology
-                \item Algorithms Analysis
-                \item Database Management
-                \item Artificial Intelligence
-                \item Internet Technology
-                \item Systems Programming
-                \item Computer Architecture
-            \end{itemize}
-        \end{multicols}
-        \vspace*{2.0\multicolsep}
-    %\resumeSubHeadingListEnd
+% \section{Relevant Coursework}
+%     %\resumeSubHeadingListStart
+%         \begin{multicols}{4}
+%             \begin{itemize}[itemsep=-5pt, parsep=3pt]
+%                 \item\small Data Structures
+%                 \item Software Methodology
+%                 \item Algorithms Analysis
+%                 \item Database Management
+%                 \item Artificial Intelligence
+%                 \item Internet Technology
+%                 \item Systems Programming
+%                 \item Computer Architecture
+%             \end{itemize} 
+%         \end{multicols}
+%         \vspace*{2.0\multicolsep}
+%     %\resumeSubHeadingListEnd
 
 
 %-----------EXPERIENCE-----------
-\section{Experience}
+\section{Research Experience}
   \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Electronics Company}{May 2020 -- August 2020}
-      {Software Engineer Intern}{City, State}
+    \resumeSubheadingInline
+      {AI Protein Design Lab}{Korea Advanced Institute of Science and Technology}{Jun 2025 -- Aug 2025}
+      {Undergraduate Researcher (advisor: Gyu Rie Lee)}{Daejeon, South Korea}
       \resumeItemListStart
-        \resumeItem{Developed a service to automatically perform a set of unit tests daily on a product in development in order to decrease time needed for team members to identify and fix bugs/issues.}
-        \resumeItem{Incorporated scripts using Python and PowerShell to aggregate XML test results into an organized format and to load the latest build code onto the hardware, so that daily testing can be performed.}
-        \resumeItem{Utilized Jenkins to provide a continuous integration service in order to automate the entire process of loading the latest build code and test files, running the tests, and generating a report of the results once per day.}
-        \resumeItem{Explored ways to visualize and send a daily report of test results to team members  using HTML, Javascript, and CSS.}
+        \resumeItem{Designed de novo protein binders targeting \textit{phenytoin} and \textit{carbamazepine} using diffusion-based generation and multi-criteria triage (Rosetta interface scores, RMSD/PLDDT metrics from AlphaFold3, Boltz-2, TMalign, PLACER).}
+        \resumeItem{Devised a backbone diversification and optimization strategy via iterative LigandMPNN--FastRelax cycles, which expanded the \textit{carbamazepine} candidate pool (\textit{21$\rightarrow$275}) and improved interface $\Delta\Delta G$ (\textit{--25.4$\rightarrow$--31.6 kcal/mol}).}
+        \resumeItem{Established a fully reproducible end-to-end binder design pipeline, and released as an open-source repository on GitHub.}
       \resumeItemListEnd
 
-    \resumeSubheading
-      {Startup, Inc}{May 2019 -- August 2019}
-      {Front End Developer Intern}{City, State}
+    \resumeSubheadingInline
+      {Laboratory of Computational Drug Discovery}{Seoul National University}{Jul 2023 -- Aug 2025}
+      {Undergraduate Researcher (advisor: Juyong Lee)}{Seoul, South Korea}
       \resumeItemListStart
-        \resumeItem{Assisted in development of the front end of a mobile application for iOS/Android using Dart and the Flutter framework.}
-        \resumeItem{Worked with Google Firebase to manage user inputted data across multiple platforms including web and mobile apps.}
-        \resumeItem{Collaborated with team members using version control systems such as Git to organize modifications and assign tasks.}
-        \resumeItem{Utilized Android Studio as a development environment in order to visualize the application in both iOS and Android.}
-    \resumeItemListEnd
-    
+        \resumeItem{Led development of PREpiBind, a transformer-based pMHC-II predictor; ran embedding ablations across AF3/Chai-1/Boltz-1, ESM series, and BLOSUM, selected ESM C Small for the best accuracy--size trade-off, achieved ROAUC 0.998 on MS datasets, and released a public web server (manuscript in prep).}
+        \resumeItem{Benchmarked 27 LLMs on Korean Pharmacist Licensing Exam (2019--2024); built the evaluation framework and error taxonomy; 7 models passed all years, best reaching top-12\% of human examinees (manuscript submitted).}
+        \resumeItem{Reproduced a small-molecule discovery pipeline for CB1 receptor using AutoDock-GPU and the Enamine Hit Locator Library, automating QC and ranking scripts for high-throughput screening.}
+      \resumeItemListEnd
+
+    \resumeSubheadingInline
+      {Structure \& Knowledge Injection into ML Lab}{Seoul National University}{May 2024 -- Sep 2024}
+      {Undergraduate Researcher (advisor: Jay-Yoon Lee)}{Seoul, South Korea}
+      \resumeItemListStart
+        \resumeItem{Implemented a joint-loss for semi-supervised training in RoseTTAFold2NA, enabling use of unlabeled sequences alongside labeled data; integrated the loss into the training loop (dataloaders/optimizer flow), refactored code for unlabeled batches; validated functionality with ablations across three label-density regimes, confirming stable learning signals.}
+      \resumeItemListEnd
+
+    \resumeSubheadingInline
+      {Systems Pharmacology Lab}{Seoul National University}{Jun 2023 -- Jul 2023}
+      {Undergraduate Intern (advisor: Minsoo Noh)}{Seoul, South Korea}
+      \resumeItemListStart
+        \resumeItem{Performed a HaCaT cell--based PGE$_2$ competitive ELISA to assess tryptophol's anti-inflammatory effects; benchmarked against NSAIDs, analyzed dose--response data.}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 \vspace{-16pt}
 
 %-----------PROJECTS-----------
-\section{Projects}
-    \vspace{-5pt}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Gym Reservation Bot} $|$ \emph{Python, Selenium, Google Cloud Console}}{January 2021}
-          \resumeItemListStart
-            \resumeItem{Developed an automatic bot using Python and Google Cloud Console to register myself for a timeslot at my school gym.}
-            \resumeItem{Implemented Selenium to create an instance of Chrome in order to interact with the correct elements of the web page.}
-            \resumeItem{Created a Linux virtual machine to run on Google Cloud so that the program is able to run everyday from the cloud.}
-            \resumeItem{Used Cron to schedule the program to execute automatically at 11 AM every morning so a reservation is made for me.}
-          \resumeItemListEnd
-          \vspace{-13pt}
-      \resumeProjectHeading
-          {\textbf{Ticket Price Calculator App} $|$ \emph{Java, Android Studio}}{November 2020}
-          \resumeItemListStart
-            \resumeItem{Created an Android application using Java and Android Studio to calculate ticket prices for trips to museums in NYC.}
-            \resumeItem{Processed user inputted information in the back-end of the app to return a subtotal price based on the tickets selected.}
-            \resumeItem{Utilized the layout editor to create a UI for the application in order to allow different scenes to interact with each other.}
-          \resumeItemListEnd 
-          \vspace{-13pt}
-          \resumeProjectHeading
-          {\textbf{Transaction Management GUI} $|$ \emph{Java, Eclipse, JavaFX}}{October 2020}
-          \resumeItemListStart
-            \resumeItem{Designed a sample banking transaction system using Java to simulate the common functions of using a bank account.}
-            \resumeItem{Used JavaFX to create a GUI that supports actions such as creating an account, deposit, withdraw, list all acounts, etc.}
-            \resumeItem{Implemented object-oriented programming practices such as inheritance to create different account types and databases.}
-          \resumeItemListEnd 
-    \resumeSubHeadingListEnd
-\vspace{-15pt}
+% \section{Projects}
+%     \vspace{-5pt}
+%     \resumeSubHeadingListStart
+%       \resumeProjectHeading
+%           {\textbf{Gym Reservation Bot} $|$ \emph{Python, Selenium, Google Cloud Console}}{January 2021}
+%           \resumeItemListStart
+%             \resumeItem{Developed an automatic bot using Python and Google Cloud Console to register myself for a timeslot at my school gym.}
+%             \resumeItem{Implemented Selenium to create an instance of Chrome in order to interact with the correct elements of the web page.}
+%             \resumeItem{Created a Linux virtual machine to run on Google Cloud so that the program is able to run everyday from the cloud.}
+%             \resumeItem{Used Cron to schedule the program to execute automatically at 11 AM every morning so a reservation is made for me.}
+%           \resumeItemListEnd
+%           \vspace{-13pt}
+%       \resumeProjectHeading
+%           {\textbf{Ticket Price Calculator App} $|$ \emph{Java, Android Studio}}{November 2020}
+%           \resumeItemListStart
+%             \resumeItem{Created an Android application using Java and Android Studio to calculate ticket prices for trips to museums in NYC.}
+%             \resumeItem{Processed user inputted information in the back-end of the app to return a subtotal price based on the tickets selected.}
+%             \resumeItem{Utilized the layout editor to create a UI for the application in order to allow different scenes to interact with each other.}
+%           \resumeItemListEnd 
+%           \vspace{-13pt}
+%           \resumeProjectHeading
+%           {\textbf{Transaction Management GUI} $|$ \emph{Java, Eclipse, JavaFX}}{October 2020}
+%           \resumeItemListStart
+%             \resumeItem{Designed a sample banking transaction system using Java to simulate the common functions of using a bank account.}
+%             \resumeItem{Used JavaFX to create a GUI that supports actions such as creating an account, deposit, withdraw, list all acounts, etc.}
+%             \resumeItem{Implemented object-oriented programming practices such as inheritance to create different account types and databases.}
+%           \resumeItemListEnd 
+%     \resumeSubHeadingListEnd
+% \vspace{-15pt}
 
 
 %
@@ -223,9 +255,11 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, Java, C, HTML/CSS, JavaScript, SQL} \\
-     \textbf{Developer Tools}{: VS Code, Eclipse, Google Cloud Platform, Android Studio} \\
-     \textbf{Technologies/Frameworks}{: Linux, Jenkins, GitHub, JUnit, WordPress} \\
+    \textbf{Programming \& Data}: Python, PyTorch, Numpy, Bash, pandas, matplotlib \\
+    \textbf{Modeling \& Docking}: RDKit, PyMOL, Chimera, AutoDock, PyRosetta, RFdiffusion (AA), LigandMPNN, AlphaFold3 \\
+    \textbf{Systems \& DevOps}: Linux, Git, Slurm, conda/mamba \\
+    \textbf{Experimental Techniques}: cell culture (HaCaT), buffer/reagent prep, competitive ELISA, serial dilutions, plate reader
+
     }}
  \end{itemize}
  \vspace{-16pt}
