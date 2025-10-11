@@ -20,6 +20,7 @@
 \usepackage{tabularx}
 \usepackage{fontawesome5}
 \usepackage{multicol}
+\usepackage{kotex}
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
@@ -66,6 +67,22 @@
 
 %-------------------------
 % Custom commands
+\newenvironment{ieeereflist}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{2.0em}
+    \setlength{\itemindent}{0pt}
+    \setlength{\labelwidth}{1.5em}
+    \setlength{\labelsep}{0.5em}
+    \setlength{\listparindent}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\partopsep}{0pt}
+  }
+}{
+  \end{list}
+}
+\newcommand{\ieeerefitem}[2]{\item[\small\textbf{[#1]}] \small#2}
+
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
@@ -86,11 +103,10 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-% Variant: left side shows "Lab | Institution" inline
 \newcommand{\resumeSubheadingInline}[5]{
   \vspace{-2pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      	\textbf{#1}, \emph{#2} & \textbf{\small #3} \\
+      	\textbf{#1}, {#2} & \textbf{\small #3} \\
       	\textit{\small#4} & \textit{\small #5} \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -116,7 +132,7 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
@@ -125,17 +141,9 @@
 
 \begin{document}
 
-%----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
 \begin{center}
     {\Huge \scshape David Hyunyoo Jang} \\ \vspace{1pt}
-    % 123 Street Name, Town, State 12345 \\ \vspace{1pt}
     \small 
-    % \raisebox{-0.1\height}\faPhone\ 123-456-7890 ~ 
     \href{mailto:hwjang00@snu.ac.kr}{\raisebox{-0.2\height}\faEnvelope\  \underline{hwjang00@snu.ac.kr}} ~ 
     \href{https://linkedin.com/in/daylight00/}{\raisebox{-0.2\height}\faLinkedin\ \underline{daylight00}}  ~
     \href{https://github.com/daylight-00}{\raisebox{-0.2\height}\faGithub\ \underline{daylight-00}}
@@ -162,35 +170,18 @@
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-%------RELEVANT COURSEWORK-------
-% \section{Relevant Coursework}
-%     %\resumeSubHeadingListStart
-%         \begin{multicols}{4}
-%             \begin{itemize}[itemsep=-5pt, parsep=3pt]
-%                 \item\small Data Structures
-%                 \item Software Methodology
-%                 \item Algorithms Analysis
-%                 \item Database Management
-%                 \item Artificial Intelligence
-%                 \item Internet Technology
-%                 \item Systems Programming
-%                 \item Computer Architecture
-%             \end{itemize} 
-%         \end{multicols}
-%         \vspace*{2.0\multicolsep}
-%     %\resumeSubHeadingListEnd
-
 
 %-----------EXPERIENCE-----------
 \section{Research Experience}
   \resumeSubHeadingListStart
     \resumeSubheadingInline
-      {AI Protein Design Lab}{Korea Advanced Institute of Science and Technology}{Jun 2025 -- Aug 2025}
+      {AI Protein Design Lab}{Korea Advanced Institute of Science and Technology (KAIST)}{Jun 2025 -- Aug 2025}
       {Undergraduate Researcher (advisor: Gyu Rie Lee)}{Daejeon, South Korea}
       \resumeItemListStart
-        \resumeItem{Designed de novo protein binders targeting \textit{phenytoin} and \textit{carbamazepine} using diffusion-based generation and multi-criteria triage (Rosetta interface scores, RMSD/PLDDT metrics from AlphaFold3, Boltz-2, TMalign, PLACER).}
+        \resumeItem{Designed de novo protein binders targeting \textit{phenytoin} and \textit{carbamazepine} using diffusion-based generation and multi-criteria triage (Rosetta interface scores, RMSD/pLDDT metrics from AlphaFold3, Boltz-2, TMalign, PLACER); }
         \resumeItem{Devised a backbone diversification and optimization strategy via iterative LigandMPNN--FastRelax cycles, which expanded the \textit{carbamazepine} candidate pool (\textit{21$\rightarrow$275}) and improved interface $\Delta\Delta G$ (\textit{--25.4$\rightarrow$--31.6 kcal/mol}).}
         \resumeItem{Established a fully reproducible end-to-end binder design pipeline, and released as an open-source repository on GitHub.}
+        \resumeItem{Implemented atom-wise bias conditioning functionality for relative accessible surface area (rASA) in RFdiffusion All-Atom.}
       \resumeItemListEnd
 
     \resumeSubheadingInline
@@ -203,7 +194,7 @@
       \resumeItemListEnd
 
     \resumeSubheadingInline
-      {Structure \& Knowledge Injection into ML Lab}{Seoul National University}{May 2024 -- Sep 2024}
+      {Structure \& Knowledge Injection into Machine Learning Lab}{Seoul National University}{May 2024 -- Sep 2024}
       {Undergraduate Researcher (advisor: Jay-Yoon Lee)}{Seoul, South Korea}
       \resumeItemListStart
         \resumeItem{Implemented a joint-loss for semi-supervised training in RoseTTAFold2NA, enabling use of unlabeled sequences alongside labeled data; integrated the loss into the training loop (dataloaders/optimizer flow), refactored code for unlabeled batches; validated functionality with ablations across three label-density regimes, confirming stable learning signals.}
@@ -218,46 +209,14 @@
   \resumeSubHeadingListEnd
 \vspace{-16pt}
 
-%-----------PROJECTS-----------
-% \section{Projects}
-%     \vspace{-5pt}
-%     \resumeSubHeadingListStart
-%       \resumeProjectHeading
-%           {\textbf{Gym Reservation Bot} $|$ \emph{Python, Selenium, Google Cloud Console}}{January 2021}
-%           \resumeItemListStart
-%             \resumeItem{Developed an automatic bot using Python and Google Cloud Console to register myself for a timeslot at my school gym.}
-%             \resumeItem{Implemented Selenium to create an instance of Chrome in order to interact with the correct elements of the web page.}
-%             \resumeItem{Created a Linux virtual machine to run on Google Cloud so that the program is able to run everyday from the cloud.}
-%             \resumeItem{Used Cron to schedule the program to execute automatically at 11 AM every morning so a reservation is made for me.}
-%           \resumeItemListEnd
-%           \vspace{-13pt}
-%       \resumeProjectHeading
-%           {\textbf{Ticket Price Calculator App} $|$ \emph{Java, Android Studio}}{November 2020}
-%           \resumeItemListStart
-%             \resumeItem{Created an Android application using Java and Android Studio to calculate ticket prices for trips to museums in NYC.}
-%             \resumeItem{Processed user inputted information in the back-end of the app to return a subtotal price based on the tickets selected.}
-%             \resumeItem{Utilized the layout editor to create a UI for the application in order to allow different scenes to interact with each other.}
-%           \resumeItemListEnd 
-%           \vspace{-13pt}
-%           \resumeProjectHeading
-%           {\textbf{Transaction Management GUI} $|$ \emph{Java, Eclipse, JavaFX}}{October 2020}
-%           \resumeItemListStart
-%             \resumeItem{Designed a sample banking transaction system using Java to simulate the common functions of using a bank account.}
-%             \resumeItem{Used JavaFX to create a GUI that supports actions such as creating an account, deposit, withdraw, list all acounts, etc.}
-%             \resumeItem{Implemented object-oriented programming practices such as inheritance to create different account types and databases.}
-%           \resumeItemListEnd 
-%     \resumeSubHeadingListEnd
-% \vspace{-15pt}
 
-
-%
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-    \textbf{Programming \& Data}: Python, PyTorch, Numpy, Bash, pandas, matplotlib \\
+    \textbf{Programming \& Data}: Python, PyTorch, Numpy, Bash, pandas, matplotlib, Streamlit, Nginx, LaTeX \\
     \textbf{Modeling \& Docking}: RDKit, PyMOL, Chimera, AutoDock, PyRosetta, RFdiffusion (AA), LigandMPNN, AlphaFold3 \\
-    \textbf{Systems \& DevOps}: Linux, Git, Slurm, conda/mamba \\
+    \textbf{Systems \& DevOps}: Linux, Git, Slurm, conda/mamba, HuggingFace \\
     \textbf{Experimental Techniques}: cell culture (HaCaT), buffer/reagent prep, competitive ELISA, serial dilutions, plate reader
 
     }}
@@ -266,16 +225,68 @@
 
 
 %-----------INVOLVEMENT---------------
+\section{Other Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Seoul National University Hospital}{Dec 2024 -- Feb 2025}
+      {Hospital Pharmacy Practicum}{Seoul, South Korea}
+      \resumeItemListStart
+        \resumeItem{Dispensing, patient counseling, medication safety workflow.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {E-Blue Pharmacy}{Feb 2025 -- Mar 2025}
+      {Community Pharmacy Practicum}{Seoul, South Korea}
+      \resumeItemListStart
+        \resumeItem{Community dispensing, OTC counseling, inventory coordination.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Military Service}{Aug 2025 -- Feb 2027}
+      {Sergeant}{III Corps, Republic of Korea Army}
+      \resumeItemListStart
+        \resumeItem{Operated and maintained portable surface-to-air missile systems during air-defense training and readiness operations.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
 \section{Leadership / Extracurricular}
     \resumeSubHeadingListStart
-        \resumeSubheading{Fraternity}{Spring 2020 -- Present}{President}{University Name}
+        \resumeSubheading{SNU Alpha (Deep Learning Study Club)}{Spring 2022 -- Winter 2024}{Executive Member, Co-Founder}{College of Pharmacy, Seoul National University}
             \resumeItemListStart
-                \resumeItem{Achieved a 4 star fraternity ranking by the Office of Fraternity and Sorority Affairs (highest possible ranking).}
+                \resumeItem{Peer-taught deep learning basics and applications in drug discovery.}
+                \resumeItem{Led weekly study sessions on Natural Language Processing in Fall 2023 and PyTorch in Spring 2024.}
                 \resumeItem{Managed executive board of 5 members and ran weekly meetings to oversee progress in essential parts of the chapter.}
-                \resumeItem{Led chapter of 30+ members to work towards goals that improve and promote community service, academics, and unity.}
             \resumeItemListEnd
-        
+        \resumeSubheading{SNU Boncho (Pharmacy Student–Alumni Association)}{Spring 2022 -- Winter 2024}{Executive Member}{College of Pharmacy, Seoul National University}
+            \resumeItemListStart
+                \resumeItem{Facilitated intergenerational networking among pharmacy students, alumni, and faculty.}
+                \resumeItem{Organized informal gatherings and mentorship sessions bridging undergraduate and professional members.}
+                \resumeItem{Supported planning of alumni events and student outreach activities.}
+            \resumeItemListEnd
     \resumeSubHeadingListEnd
 
+\section{Awards \& Funding}
+    \resumeSubHeadingListStart
+        \resumeSubheadingInline{Research Excellence Award}{2024 SNU Student-Directed Education Undergraduate Research Program}{2025}{President of Seoul National University}{}
+            \resumeItemListStart
+                \resumeItem{Awarded to two projects per fields (ten total) for excellence in research execution and outcomes.}
+            \resumeItemListEnd
+        \resumeSubheading{2024 SNU Student-Directed Education Undergraduate Research Program}{2024}{Faculty of Liberal Education, Seoul National University}{}
+            \resumeItemListStart
+                \resumeItem{Selected as one of 36 projects to receive funding for undergraduate research.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\section{Papers and Presentations}
+\begin{ieeereflist}
+  \ieeerefitem{1}{PREpiBind: Protein Representation-integrated Epitope-MHC Class II Binding Prediction\\
+  \textbf{David Hyunyoo Jang}, Dongwoo Kim, Byungho Park, Untaek Hwang, Yoonjoo Choi, Juyong Lee\\
+  KIDDS 2025 Summer Workshop (Korean In silico bioDesign and Discovery Society, Poster)\\
+  \textit{Manuscript in preparation}}
+  \ieeerefitem{2}{Large Language Models Pass the Korean Pharmacist Licensing Examination: A Benchmarking Study\\
+  \textbf{David Hyunyoo Jang}, Juyong Lee\\
+  Under review}
+  \ieeerefitem{3}{DeepXeno: Structure-Informed Prediction of Xenotransplantation Immunogenicity\\
+  \textbf{David Hyunyoo Jang}, Byungho Park, Untaek Hwang, Juyong Lee\\
+  Outstanding Research Presentation in 2024 SNU Student-Directed Education Undergraduate Research Program (Oral)}
+\end{ieeereflist}
 
 \end{document}
