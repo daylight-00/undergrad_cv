@@ -111,6 +111,14 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeSubheadingInlineTwo}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      	\textbf{#1} $|$ {#2} & \textbf{\small #3} \\
+      	\textit{\small#4} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -144,9 +152,10 @@
 \begin{center}
     {\Huge \scshape David Hyunyoo Jang} \\ \vspace{1pt}
     \small 
-    \href{mailto:hwjang00@snu.ac.kr}{\raisebox{-0.2\height}\faEnvelope\  \underline{hwjang00@snu.ac.kr}} ~ 
-    \href{https://linkedin.com/in/daylight00/}{\raisebox{-0.2\height}\faLinkedin\ \underline{daylight00}}  ~
-    \href{https://github.com/daylight-00}{\raisebox{-0.2\height}\faGithub\ \underline{daylight-00}}
+    \href{mailto:hwjang00@snu.ac.kr}{\raisebox{-0.2\height}\faEnvelope\ {hwjang00@snu.ac.kr}} ~ 
+    \href{https://linkedin.com/in/daylight00/}{\raisebox{-0.2\height}\faLinkedin\ {daylight00}}  ~
+    \href{https://github.com/daylight-00}{\raisebox{-0.2\height}\faGithub\ {daylight-00}} ~
+    $|$ ~ US Citizen
     \vspace{-8pt}
 \end{center}
 
@@ -155,19 +164,16 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Seoul National University}{Mar 2022 -- Feb 2028}
+      {Seoul National University}{Mar 2022 -- Feb 2028 (Expected)}
       {PharmD}{Seoul, South Korea}
-      \resumeItemListStart
-        \resumeItem{Selected Coursework} 
-          {Biochemistry · Pharmaceutical Statistics · Drug Delivery Systems}
-      \resumeItemListEnd
+      \vspace{-7pt}
+      \item[]\small{Selected Coursework: Biochemistry·Pharmaceutical Statistics·Drug Delivery Systems}
+    \normalsize
     \resumeSubheading
       {Korea University}{Mar 2019 -- Aug 2021}
-      {B.Eng. in Materials Science and Engineering}{Seoul, South Korea}
-      \resumeItemListStart
-        \resumeItem{Selected Coursework}
-          {Organic Nanomaterials · Fundamentals of Data Science}
-      \resumeItemListEnd
+      {Coursework in Materials Science and Engineering (no degree)}{Seoul, South Korea}
+      \vspace{-7pt}
+      \item[]\small{Selected Coursework: Organic Nanomaterials·Fundamentals of Data Science}
   \resumeSubHeadingListEnd
 
 
@@ -202,7 +208,7 @@
 
     \resumeSubheadingInline
       {Systems Pharmacology Lab}{Seoul National University}{Jun 2023 -- Jul 2023}
-      {Undergraduate Intern (advisor: Minsoo Noh)}{Seoul, South Korea}
+      {Undergraduate Internship (advisor: Minsoo Noh)}{Seoul, South Korea}
       \resumeItemListStart
         \resumeItem{Performed a HaCaT cell--based PGE$_2$ competitive ELISA to assess tryptophol's anti-inflammatory effects; benchmarked against NSAIDs, analyzed dose--response data.}
       \resumeItemListEnd
@@ -214,7 +220,7 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-    \textbf{Programming \& Data}: Python, PyTorch, Numpy, Bash, pandas, matplotlib, Streamlit, Nginx, LaTeX \\
+    \textbf{Programming \& Data}: Python, PyTorch, Numpy, Bash, pandas, matplotlib, Streamlit, Nginx \\
     \textbf{Modeling \& Docking}: RDKit, PyMOL, Chimera, AutoDock, PyRosetta, RFdiffusion (AA), LigandMPNN, AlphaFold3 \\
     \textbf{Systems \& DevOps}: Linux, Git, Slurm, conda/mamba, HuggingFace \\
     \textbf{Experimental Techniques}: cell culture (HaCaT), buffer/reagent prep, competitive ELISA, serial dilutions, plate reader
@@ -240,7 +246,7 @@
         \resumeItem{Community dispensing, OTC counseling, inventory coordination.}
       \resumeItemListEnd
     \resumeSubheading
-      {Military Service}{Aug 2025 -- Feb 2027}
+      {Military Service}{Aug 2025 -- Feb 2027 (Expected)}
       {Sergeant}{III Corps, Republic of Korea Army}
       \resumeItemListStart
         \resumeItem{Operated and maintained portable surface-to-air missile systems during air-defense training and readiness operations.}
@@ -249,13 +255,12 @@
 
 \section{Leadership / Extracurricular}
     \resumeSubHeadingListStart
-        \resumeSubheading{SNU Alpha (Deep Learning Study Club)}{Spring 2022 -- Winter 2024}{Executive Member, Co-Founder}{College of Pharmacy, Seoul National University}
+        \resumeSubheadingInlineTwo{SNU Alpha}{Deep Learning Study Club}{Spring 2022 -- Winter 2024}{Executive Member, Co-Founder}{College of Pharmacy, Seoul National University}
             \resumeItemListStart
                 \resumeItem{Peer-taught deep learning basics and applications in drug discovery.}
                 \resumeItem{Led weekly study sessions on Natural Language Processing in Fall 2023 and PyTorch in Spring 2024.}
-                \resumeItem{Managed executive board of 5 members and ran weekly meetings to oversee progress in essential parts of the chapter.}
             \resumeItemListEnd
-        \resumeSubheading{SNU Boncho (Pharmacy Student–Alumni Association)}{Spring 2022 -- Winter 2024}{Executive Member}{College of Pharmacy, Seoul National University}
+        \resumeSubheadingInlineTwo{SNU Boncho}{Pharmacy Student–Alumni Association}{Spring 2022 -- Winter 2024}{Executive Member}{College of Pharmacy, Seoul National University}
             \resumeItemListStart
                 \resumeItem{Facilitated intergenerational networking among pharmacy students, alumni, and faculty.}
                 \resumeItem{Organized informal gatherings and mentorship sessions bridging undergraduate and professional members.}
