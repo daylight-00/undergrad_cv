@@ -1,1 +1,3 @@
-# undergrad_cv
+# Curriculum Vitae
+
+LaTeX template for my undergraduate CV
