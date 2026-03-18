@@ -154,7 +154,7 @@
 \small 
 \href{mailto:hwjang00@snu.ac.kr}{\raisebox{-0.2\height}\faEnvelope\ {hwjang00@snu.ac.kr}} ~ 
 \href{https://linkedin.com/in/daylight00/}{\raisebox{-0.2\height}\faLinkedin\ {daylight00}}  ~
-\href{https://github.com/daylight-00}{\raisebox{-0.2\height}\faGithub\ {daylight-00}} % ~ $|$ ~ US Citizen
+\href{https://github.com/daylight-00}{\raisebox{-0.2\height}\faGithub\ {daylight-00}} ~ $|$ ~ US Citizen
 \vspace{-8pt}
 \end{center}
 
@@ -186,7 +186,7 @@
 \resumeItem{Designed de novo protein binders targeting \textit{phenytoin} and \textit{carbamazepine} using diffusion-based generation and multi-criteria triage (Rosetta interface scores, RMSD/pLDDT metrics from AlphaFold3, Boltz-2, TMalign, PLACER); }
 \resumeItem{Devised a backbone diversification and optimization strategy via iterative LigandMPNN--FastRelax cycles, which expanded the \textit{carbamazepine} candidate pool (\textit{21$\rightarrow$275}) and improved interface $\Delta\Delta G$ (\textit{--25.4$\rightarrow$--31.6 kcal/mol}).}
 \resumeItem{Established a reproducible end-to-end binder design workflow, and released as an open-source repository on GitHub.}
-\resumeItem{Implemented atom-wise bias conditioning functionality for relative accessible surface area (rASA) in RFdiffusion2.}
+\resumeItem{Extended the relative accessible surface area (rASA) bias conditioning in RFdiffusion2 from molecule-wise to atom-wise resolution, enabling finer-grained control over per-atom solvent exposure during generation.}
 \resumeItemListEnd
 
 \resumeSubheadingInline
@@ -201,7 +201,8 @@
 {Structure \& Knowledge Injection into Machine Learning Lab}{Seoul National University}{May 2024 -- Sep 2024}
 {Undergraduate Researcher (advisor: Jay-Yoon Lee)}{Seoul, South Korea}
 \resumeItemListStart
-\resumeItem{Implemented a joint-loss for semi-supervised training in RoseTTAFold2NA, enabling use of unlabeled sequences alongside labeled data; integrated the loss into the training loop (dataloaders/optimizer flow), refactored code for unlabeled batches; validated functionality with ablations across three label-density regimes, confirming stable learning signals.}
+\resumeItem{Debugged and completed the training pipeline for a semi-supervised joint-loss framework in RoseTTAFold2NA, enabling use of unlabeled sequences alongside labeled data; refactored dataloaders and optimizer flow for unlabeled batches.}
+\resumeItem{Evaluated the joint-loss with data-augmentation strategy across 10\%/30\%/50\% label-density regimes to assess whether unlabeled data could improve learning under low-label conditions.}
 \resumeItemListEnd
 
 \resumeSubheadingInline
