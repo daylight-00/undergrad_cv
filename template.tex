@@ -143,6 +143,14 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+\newcommand{\resumeProjectSubheading}[3]{
+\vspace{1pt}\item[]
+\hspace*{-0.5\labelwidth}%
+\begin{tabular*}{\dimexpr\linewidth+0.5\labelwidth\relax}[t]{l@{\extracolsep{\fill}}r}
+\textbf{\small #1} {#2} & {\small #3} \\
+\end{tabular*}\vspace{-5pt}
+}
+
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -183,26 +191,35 @@
 {AI Protein Design Lab}{Korea Advanced Institute of Science and Technology (KAIST)}{Jun 2025 -- Aug 2025}
 {Undergraduate Researcher (advisor: Gyu Rie Lee)}{Daejeon, South Korea}
 \resumeItemListStart
-\resumeItem{Designed de novo protein binders targeting \textit{phenytoin} and \textit{carbamazepine} using diffusion-based generation and multi-criteria triage (Rosetta interface scores, RMSD/pLDDT metrics from AlphaFold3, Boltz-2, TMalign, PLACER); }
-\resumeItem{Devised a backbone diversification and optimization strategy via iterative LigandMPNN--FastRelax cycles, which expanded the \textit{carbamazepine} candidate pool (\textit{21$\rightarrow$275}) and improved interface $\Delta\Delta G$ (\textit{--25.4$\rightarrow$--31.6 kcal/mol}).}
-\resumeItem{Established a reproducible end-to-end binder design workflow, and released as an open-source repository on GitHub.}
-\resumeItem{Extended the relative accessible surface area (rASA) bias conditioning in RFdiffusion2 from molecule-wise to atom-wise resolution, enabling finer-grained control over per-atom solvent exposure during generation.}
+\resumeProjectSubheading{Collaborative small-molecule sensor binder design campaigns}{}{\textit{open-source repos}}
+\resumeItem{Developed, standardized, and released a reproducible end-to-end binder design workflow during phenytoin and carbamazepine sensor-design campaigns, integrating diffusion-based backbone generation, LigandMPNN, Rosetta scoring, AF3/Boltz-2 refolding, PLACER, TMalign, and RMSD-based triage with parquet-based metric lineage and SLURM-scalable execution. [\href{https://github.com/daylight-00/ligand_binder_design}{\color{RoyalBlue}{code}}]}
+\resumeItem{Developed metric-guided LigandMPNN--FastRelax recycling to diversify and optimize candidate pools beyond sequence-only sampling across phenytoin/carbamazepine campaigns; in the carbamazepine campaign, expanded screened candidates (\textit{21$\rightarrow$275}) and improved the best Rosetta interface $\Delta\Delta G$ score (\textit{--25.4$\rightarrow$--31.6}). [\href{https://github.com/daylight-00/ligandMPNN_FR}{\color{RoyalBlue}{code}}]}
+\resumeProjectSubheading{RFdiffusion2 atom-wise RASA conditioning for ligand orientation control}{}{\textit{submitted upstream PR}}
+\resumeItem{Implemented inference-time atom-wise RASA conditioning for RFdiffusion2 to control buried/exposed ligand atoms and improve ligand-orientation control while preserving compatibility with global RASA inputs. [\href{https://github.com/RosettaCommons/RFdiffusion2/pull/35}{\color{RoyalBlue}{PR}}]}
 \resumeItemListEnd
 
 \resumeSubheadingInline
 {Laboratory of Computational Drug Discovery}{Seoul National University}{Jul 2023 -- Aug 2025}
 {Undergraduate Researcher (advisor: Juyong Lee)}{Seoul, South Korea}
 \resumeItemListStart
-\resumeItem{Led development of PREpiBind, a transformer-based pMHC-II predictor; ran embedding ablations across AF3/Chai-1/Boltz-1, ESM series, and BLOSUM, selected ESM C Small for the best accuracy--size trade-off, achieved ROAUC 0.998 on MS datasets, and released a public {\href{https://lcdd.snu.ac.kr/prepibind/}{\color{RoyalBlue}\underline{web server}}} (manuscript in prep).}\resumeItem{Benchmarked 27 LLMs on Korean Pharmacist Licensing Exam (2019--2024); built the evaluation framework and error taxonomy; 7 models passed all years, best reaching top-12\% of human examinees (manuscript submitted).}
-\resumeItem{Reproduced a small-molecule discovery pipeline for CB1 receptor using AutoDock-GPU and the Enamine Hit Locator Library, automating QC and ranking scripts for high-throughput screening.}
+\resumeProjectSubheading{PREpiBind --- pMHC-II binding: representation benchmark \& web server}{}{\textit{first-author; manuscript in prep}}
+\resumeItem{Independently built PREpiBind, an open framework benchmarking 10 protein representations --- BLOSUM62, structure-prediction embeddings extracted by modifying AlphaFold3/Chai-1/Boltz-1 inference code, and protein language models (ESM C/ESM3) --- for pMHC class II binding on 205K IEDB entries; PLM embeddings consistently outperformed structure and alignment representations (counter to the structure-first hypothesis) and matched or exceeded NetMHCIIpan-4.3, MixMHC2pred-2, and DeepNeo.}
+\resumeItem{Established leakage-controlled splits and stress-tested generalization under leave-one-molecule-out and cross-species (mouse) validation, where PLM embeddings generalized best among the benchmarked representations; re-implemented DeepNeo from scratch in PyTorch (matching its reported accuracy) for a fair head-to-head.}
+\resumeItem{Selected ESM C 300M for the best accuracy--efficiency trade-off and released open tools --- pre-trained models, Colab/CLI demos, and a public {\href{https://lcdd.snu.ac.kr/prepibind/}{\color{RoyalBlue}\underline{web server}}} covering 7,282 IPD-IMGT/HLA alleles zero-shot plus a custom-sequence mode for non-human alleles --- with inference optimized to up to $\sim$69$\times$ faster than command-line tools. [\href{https://github.com/daylight-00/PREpiBind}{\color{RoyalBlue}{code}}]}
+\resumeProjectSubheading{LLMs on the Korean Pharmacist Licensing Exam}{}{\textit{under review}}
+\resumeItem{Designed and built an end-to-end benchmark of 27 LLMs --- 7 proprietary and 20 open-source (4--104B) --- across six KPLE exam years (2019--2024) in Korean and English, covering question extraction (text + vision-OCR), LLM-based translation, local/API inference, and official scoring with human-percentile normalization.}
+\resumeItem{7 models passed all years in both languages --- the top reaching the top 12\% of human examinees --- under a logarithmic size--performance trend; developed a multi-pronged data-contamination analysis arguing against pretraining leakage as the dominant performance driver. [\href{https://github.com/daylight-00/llms-pass-kple}{\color{RoyalBlue}{code}}]}
+\resumeProjectSubheading{CB1 receptor small-molecule virtual screening}{}{}
+\resumeItem{Reproduced an end-to-end structure-based virtual screen of the Enamine Hit Locator Library (460K compounds) against the CB1 receptor on an 8-GPU cluster ($\sim$12 h) --- self-compiling AutoDock-GPU from source for multi-GPU execution (the prebuilt binary used 1 of 8 GPUs) --- and automating batch docking, result parsing, and ranking.}
 \resumeItemListEnd
 
 \resumeSubheadingInline
 {Structure \& Knowledge Injection into Machine Learning Lab}{Seoul National University}{May 2024 -- Sep 2024}
 {Undergraduate Researcher (advisor: Jay-Yoon Lee)}{Seoul, South Korea}
 \resumeItemListStart
-\resumeItem{Debugged and completed the training pipeline for a semi-supervised joint-loss framework in RoseTTAFold2NA, enabling use of unlabeled sequences alongside labeled data; refactored dataloaders and optimizer flow for unlabeled batches.}
-\resumeItem{Evaluated the joint-loss with data-augmentation strategy across 10\%/30\%/50\% label-density regimes to assess whether unlabeled data could improve learning under low-label conditions.}
+\resumeProjectSubheading{Semi-supervised data augmentation for RoseTTAFold2NA}{\small\textit{collaboration with Minkyung Baek's lab}}{}
+\resumeItem{Implemented the training pipeline for a semi-supervised joint-loss objective that augments RF2NA with unlabeled self-distilled structures --- built the mixed labeled/unlabeled data loader, per-batch loss routing, and a distributed sampler with tunable unlabeled fraction, consolidating scattered prototype scripts into one parameterized training entry point.}
+\resumeItem{Designed and ran a controlled low-label study --- PDB-only vs distilled-augmentation vs joint-loss semi-supervision across 10/30/50\% label-density regimes --- to test whether unlabeled data improves RF2NA learning under sparse supervision.}
 \resumeItemListEnd
 
 \resumeSubheadingInline
