@@ -23,7 +23,10 @@
 \usepackage{kotex}
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
-\input{glyphtounicode}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode} % pdfTeX only; XeTeX/LuaTeX (e.g. tectonic) emit Unicode natively
+\fi
 
 
 %----------FONT OPTIONS----------
@@ -35,7 +38,24 @@
 
 % serif
 % \usepackage{CormorantGaramond}
-\usepackage{charter}
+\ifPDFTeX
+  \usepackage{charter}
+\else
+  % XeTeX/LuaTeX (e.g. tectonic) cannot use the Type 1 `charter` fonts,
+  % so load XCharter, the OpenType extension of Bitstream Charter.
+  \usepackage{fontspec}
+  \setmainfont{XCharter}[
+    Extension      = .otf,
+    UprightFont    = *-Roman,
+    BoldFont       = *-Bold,
+    ItalicFont     = *-Italic,
+    BoldItalicFont = *-BoldItalic,
+  ]
+  \ifXeTeX
+    \xetexkofontregime{latin} % parentheses/punctuation in the Latin font, not the Hangul one
+  \fi
+  \frenchspacing % match the pdfTeX build: no extra space after sentence punctuation
+\fi
 
 
 \pagestyle{fancy}
@@ -63,7 +83,9 @@
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generated PDF is machine-readable/ATS parsable
-\pdfgentounicode=1
+\ifPDFTeX
+  \pdfgentounicode=1
+\fi
 
 %-------------------------
 % Custom commands
