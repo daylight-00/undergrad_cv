@@ -1,3 +1,6 @@
+## Claude Code local state (worktrees, settings)
+.claude/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
