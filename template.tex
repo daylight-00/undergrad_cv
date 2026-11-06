@@ -3,6 +3,8 @@
 % Author : Jake Gutierrez
 % Based off of: https://github.com/sb2nov/resume
 % License : MIT
+% Build : tectonic -X compile template.tex
+%         (XeTeX; fonts via fontspec, Unicode text in the PDF stays ATS-parsable)
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
@@ -20,13 +22,10 @@
 \usepackage{tabularx}
 \usepackage{fontawesome5}
 \usepackage{multicol}
-\usepackage{kotex}
+\usepackage{fontspec}
+\usepackage{kotex} % xetexko under XeTeX
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
-\usepackage{iftex}
-\ifPDFTeX
-  \input{glyphtounicode} % pdfTeX only; XeTeX/LuaTeX (e.g. tectonic) emit Unicode natively
-\fi
 
 
 %----------FONT OPTIONS----------
@@ -38,24 +37,15 @@
 
 % serif
 % \usepackage{CormorantGaramond}
-\ifPDFTeX
-  \usepackage{charter}
-\else
-  % XeTeX/LuaTeX (e.g. tectonic) cannot use the Type 1 `charter` fonts,
-  % so load XCharter, the OpenType extension of Bitstream Charter.
-  \usepackage{fontspec}
-  \setmainfont{XCharter}[
-    Extension      = .otf,
-    UprightFont    = *-Roman,
-    BoldFont       = *-Bold,
-    ItalicFont     = *-Italic,
-    BoldItalicFont = *-BoldItalic,
-  ]
-  \ifXeTeX
-    \xetexkofontregime{latin} % parentheses/punctuation in the Latin font, not the Hangul one
-  \fi
-  \frenchspacing % match the pdfTeX build: no extra space after sentence punctuation
-\fi
+\setmainfont{XCharter}[ % OpenType extension of Bitstream Charter
+  Extension      = .otf,
+  UprightFont    = *-Roman,
+  BoldFont       = *-Bold,
+  ItalicFont     = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+]
+\xetexkofontregime{latin} % parentheses/punctuation in the Latin font, not the Hangul one
+\frenchspacing            % no extra space after sentence punctuation
 
 
 \pagestyle{fancy}
@@ -81,11 +71,6 @@
 \titleformat{\section}{
 \vspace{-4pt}\scshape\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-% Ensure that generated PDF is machine-readable/ATS parsable
-\ifPDFTeX
-  \pdfgentounicode=1
-\fi
 
 %-------------------------
 % Custom commands
