@@ -180,14 +180,9 @@
 \resumeSubheading
 {Seoul National University}{Mar 2022 -- Feb 2028 (Expected)}
 {PharmD}{Seoul, South Korea}
-\vspace{-7pt}
-\item[]\small{Selected Coursework: Biochemistry·Pharmaceutical Statistics·Drug Delivery Systems}
-\normalsize
 \resumeSubheading
 {Korea University}{Mar 2019 -- Aug 2021}
 {Coursework in Materials Science and Engineering (no degree)}{Seoul, South Korea}
-\vspace{-7pt}
-\item[]\small{Selected Coursework: Organic Nanomaterials·Fundamentals of Data Science}
 \resumeSubHeadingListEnd
 
 
@@ -239,31 +234,47 @@
 \resumeSubHeadingListEnd
 
 
-%-----------MANUSCRIPTS AND PRESENTATIONS-----------
-\section{Manuscripts \& Presentations}
+%-----------PUBLICATIONS AND PREPRINTS-----------
+\section{Publications \& Preprints}
 \begin{ieeereflist}
 \ieeerefitem{1}{PREpiBind: Protein Representation-integrated Epitope--MHC Class II Binding Prediction\\
 \textbf{David Hyunyoo Jang}, Dongwoo Kim, Untaek Hwang, Byungho Park, Yoonjoo Choi, Juyong Lee\\
-Submitted; preprint: \textit{bioRxiv} (2026), \href{https://doi.org/10.64898/2026.09.15.751749}{\color{RoyalBlue}{doi:10.64898/2026.09.15.751749}}\\
-KIDDS 2025 Summer Workshop (Korean In silico bioDesign and Discovery Society, Poster)}
+Submitted; preprint: \textit{bioRxiv} (2026), \href{https://doi.org/10.64898/2026.09.15.751749}{\color{RoyalBlue}{doi:10.64898/2026.09.15.751749}}}
 \ieeerefitem{2}{Proprietary and Open-Source Large Language Models on the Korean Pharmacist Licensing Examination: A Comparative Benchmarking Study\\
 \textbf{David Hyunyoo Jang}, Juyong Lee\\
 Under review; preprint: \textit{medRxiv} (2025), \href{https://doi.org/10.1101/2025.04.15.25325584}{\color{RoyalBlue}{doi:10.1101/2025.04.15.25325584}}}
-\ieeerefitem{3}{DeepXeno: Structure-Informed Prediction of Xenotransplantation Immunogenicity\\
-\textbf{David Hyunyoo Jang}, Byungho Park, Untaek Hwang, Juyong Lee\\
-Outstanding Research Presentation in 2024 SNU Student-Directed Education Undergraduate Research Program (Talk)}
 \end{ieeereflist}
 
 
-%-----------OPEN-SOURCE CONTRIBUTIONS-----------
-\section{Open-Source Contributions}
+%-----------SELECTED RESEARCH PROJECTS-----------
+% DRAFT: entries only; bullets are written after each project's final review.
+\section{Selected Research Projects}
+\resumeSubHeadingListStart
+\resumeSubheading{foldspace}{2026 -- present}{Self-initiated; report in preparation}{}
+\resumeSubheading{design\_cycle}{2026 -- present}{Self-initiated follow-up to LigandMPNN--FastRelax recycling; report in preparation}{}
+\resumeSubHeadingListEnd
+
+
+%-----------RESEARCH SOFTWARE AND OPEN SOURCE-----------
+\section{Research Software \& Open-Source Contributions}
 % top-level list: use the nested-list spacing of the other sections' bullets
 \begin{itemize}[leftmargin=0.2in, itemsep=2pt, parsep=2pt]
-\resumeItem{\textbf{RosettaCommons Foundry} --- MPNN per-design confidence scores; AtomArray parser-override fix. \textit{Merged} [\href{https://github.com/RosettaCommons/foundry/pull/306}{\color{RoyalBlue}{\#306}}; \href{https://github.com/RosettaCommons/foundry/pull/389}{\color{RoyalBlue}{\#389}}]}
-\resumeItem{\textbf{Mol* Viewer for Android} (\textit{molstar} org) --- built and maintain the app, with CI-verified Mol* runtime updates. [\href{https://github.com/molstar/molstar-viewer-android}{\color{RoyalBlue}{code}}]}
+\resumeItem{\textbf{ESMFold2--AtomWorks} --- ported ESMFold2 to AtomWorks structures, with an optional Foundry training integration; exact feature parity on reference fixtures and exact output parity under deterministic GPU kernels. [\href{https://github.com/daylight-00/esmfold2-atomworks}{\color{RoyalBlue}{code}}]}
+\resumeItem{\textbf{RosettaCommons Foundry} --- merged LigandMPNN inference improvements: per-design and ligand-interface confidence reporting, and parser overrides for AtomArray inputs. [\href{https://github.com/RosettaCommons/foundry/pull/306}{\color{RoyalBlue}{\#306}}; \href{https://github.com/RosettaCommons/foundry/pull/389}{\color{RoyalBlue}{\#389}}]}
+\resumeItem{\textbf{Upstream fixes} --- AtomWorks insertion-code residue parsing, proposed and incorporated upstream in \#116 [\href{https://github.com/RosettaCommons/atomworks/pull/107}{\color{RoyalBlue}{\#107}}]; ESMFold2 multi-component CCD ligand output, the same change now present upstream [\href{https://github.com/Biohub/esm/pull/416}{\color{RoyalBlue}{\#416}}].}
 \resumeItem{\textbf{patinae} (Rust/WGPU molecular viewer) --- fixed renderer failures on low-limit GPUs and Windows. \textit{Merged} [\href{https://github.com/zmactep/patinae/pull/28}{\color{RoyalBlue}{\#28}}; \href{https://github.com/zmactep/patinae/pull/29}{\color{RoyalBlue}{\#29}}]}
-\resumeItem{\textbf{Submitted} --- ESMFold2: precomputed ESMC hidden states in folding, per-component CCD ligands [\href{https://github.com/Biohub/esm/pull/415}{\color{RoyalBlue}{\#415}}; \href{https://github.com/Biohub/esm/pull/416}{\color{RoyalBlue}{\#416}}]; RFD4-Proteina: pre-oracle filter and NaN-reward fixes [\href{https://github.com/RosettaCommons/RFD4-Proteina/pull/69}{\color{RoyalBlue}{\#69}}; \href{https://github.com/RosettaCommons/RFD4-Proteina/pull/70}{\color{RoyalBlue}{\#70}}].}
 \resumeItemListEnd % = \end{itemize}\vspace{-5pt}
+
+
+%-----------PRESENTATIONS-----------
+\section{Presentations}
+\begin{ieeereflist}
+\ieeerefitem{1}{PREpiBind: Protein Representation-integrated Epitope--MHC Class II Binding Prediction\\
+KIDDS 2025 Summer Workshop (Korean In silico bioDesign and Discovery Society), Poster}
+\ieeerefitem{2}{DeepXeno: Structure-Informed Prediction of Xenotransplantation Immunogenicity\\
+\textbf{David Hyunyoo Jang}, Byungho Park, Untaek Hwang, Juyong Lee\\
+2024 SNU Student-Directed Education Undergraduate Research Program, Talk (Outstanding Research Presentation)}
+\end{ieeereflist}
 
 
 %-----------AWARDS AND FUNDING-----------
@@ -317,7 +328,7 @@ Outstanding Research Presentation in 2024 SNU Student-Directed Education Undergr
 \begin{itemize}[leftmargin=0.15in, label={}]
 \small{\item{
 \textbf{Programming \& Data}: Python, PyTorch, Numpy, Bash, pandas, matplotlib, Streamlit, Nginx \\
-\textbf{Modeling \& Docking}: RDKit, PyMOL, Chimera, AutoDock, PyRosetta, RFdiffusion (AA), LigandMPNN, AlphaFold3 \\
+\textbf{Modeling \& Docking}: RDKit, PyMOL, Chimera, AutoDock, PyRosetta, RFdiffusion (AA), LigandMPNN, AlphaFold3, ESMFold2/ESMC, AtomWorks/Foundry, TMol, Biotite \\
 \textbf{Systems \& DevOps}: Linux, Git, Slurm, conda/mamba, HuggingFace \\
 \textbf{Experimental Techniques}: cell culture (HaCaT), buffer/reagent prep, competitive ELISA, serial dilutions, plate reader
 }}
