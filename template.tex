@@ -205,9 +205,9 @@
 {Undergraduate Researcher (advisor: Juyong Lee)}{Seoul, South Korea}
 \resumeItemListStart
 \resumeProjectSubheading{PREpiBind --- pMHC-II binding: representation benchmark \& web server}{}{}
-\resumeItem{Independently built PREpiBind, a joint-attention framework benchmarking 10 protein representations under a fixed architecture --- BLOSUM62, structure-prediction embeddings (AlphaFold3/Chai-1/Boltz-1, extracted by modifying inference code), and protein language models (PLMs: ESMC/ESM3) --- for pMHC class II binding on IEDB qualitative, MS, and IC50 datasets; PLMs generally led pooled performance, exceeding NetMHCIIpan-4.3, MixMHC2pred-2.0, and DeepNeo on qualitative and MS benchmarks (NetMHCIIpan-4.3 led on thresholded IC50).}
-\resumeItem{Built leakage-controlled splits and stress-tested generalization under leave-one-molecule-out and mouse (H2) held-out validation, where PLM gains narrowed; re-implemented DeepNeo in PyTorch (ROC-AUC 0.894; published 0.882).}
-\resumeItem{Showed that ESMC 300M matches larger PLMs (ESMC 600M, ESM3 Small/Medium) within seed variation (ROC-AUC 0.919--0.921); released code (MIT license), datasets, and trained checkpoints. [\href{https://doi.org/10.64898/2026.09.15.751749}{\color{RoyalBlue}{preprint}}; \href{https://github.com/daylight-00/PREpiBind}{\color{RoyalBlue}{code}}]}
+\resumeItem{Independently built PREpiBind, a joint-attention framework benchmarking 10 protein representations under a fixed architecture --- BLOSUM62, structure-prediction embeddings (single-residue and pairwise features from AlphaFold3/Chai-1/Boltz-1), and protein language models (PLMs: ESMC/ESM3) --- for pMHC class II binding on IEDB qualitative, MS, and IC50 datasets; PLMs generally led pooled performance, exceeding NetMHCIIpan-4.3, MixMHC2pred-2.0, and DeepNeo on qualitative and MS benchmarks (NetMHCIIpan-4.3 led on thresholded IC50).}
+\resumeItem{Built leakage-controlled splits and stress-tested generalization under leave-one-molecule-out and mouse (H2) held-out validation, where PLM gains narrowed, Chai-1 became competitive, and H2 rankings depended on aggregation; re-implemented DeepNeo in PyTorch (ROC-AUC 0.894 on our test set; 0.882 reported on its original test set).}
+\resumeItem{Showed that ESMC 300M matches larger PLMs (ESMC 600M, ESM3 Small/Medium) within seed variation (ROC-AUC 0.919--0.921; ESM3 Large highest at 0.927); released code (MIT license), datasets, and trained checkpoints. [\href{https://doi.org/10.64898/2026.09.15.751749}{\color{RoyalBlue}{preprint}}; \href{https://github.com/daylight-00/PREpiBind}{\color{RoyalBlue}{code}}]}
 \resumeItem{Built a public web server (precomputed embeddings for 7,282 IPD-IMGT/HLA and mouse H2 chains; zero-shot) with a custom-sequence mode for non-human alleles and Colab/CLI demos; up to $\sim$69$\times$ faster than command-line tools. [\href{https://lcdd.snu.ac.kr/prepibind/}{\color{RoyalBlue}{server}}]}
 \resumeProjectSubheading{LLMs on the Korean Pharmacist Licensing Exam}{}{}
 \resumeItem{Designed and built an end-to-end benchmark of 27 LLMs --- 7 proprietary and 20 open-source (4--104B) --- across six KPLE exam years (2019--2024) in Korean and English, covering question extraction (text + vision-OCR), LLM-based translation, local/API inference, and official scoring with human-percentile normalization.}
@@ -250,7 +250,7 @@ Under review; preprint: \textit{medRxiv} (2025), \href{https://doi.org/10.1101/2
 % DRAFT: entries only; bullets are written after each project's final review.
 \section{Selected Research Projects}
 \resumeSubHeadingListStart
-\resumeSubheading{foldspace}{2026 -- present}{Self-initiated; toward an ESMFold2-based design model}{}
+\resumeSubheading{foldspace}{2026 -- present}{Self-initiated; evaluating pretrained folding representations as generative priors}{}
 \resumeSubheading{design\_cycle}{2026 -- present}{Self-initiated; follow-up to LigandMPNN--FastRelax recycling}{}
 \resumeSubHeadingListEnd
 
@@ -271,8 +271,7 @@ Under review; preprint: \textit{medRxiv} (2025), \href{https://doi.org/10.1101/2
 \begin{ieeereflist}
 \ieeerefitem{1}{PREpiBind: Protein Representation-integrated Epitope--MHC Class II Binding Prediction\\
 KIDDS 2025 Summer Workshop (Korean In silico bioDesign and Discovery Society), Poster}
-\ieeerefitem{2}{DeepXeno: Structure-Informed Prediction of Xenotransplantation Immunogenicity\\
-\textbf{David Hyunyoo Jang}, Byungho Park, Untaek Hwang, Juyong Lee\\
+\ieeerefitem{2}{DeepXeno: Structure-Informed Prediction of Xenotransplantation Immunogenicity \textit{(project later developed into PREpiBind)}\\
 2024 SNU Student-Directed Education Undergraduate Research Program, Talk (Outstanding Research Presentation)}
 \end{ieeereflist}
 
@@ -316,7 +315,7 @@ KIDDS 2025 Summer Workshop (Korean In silico bioDesign and Discovery Society), P
 {Seoul National University Hospital}{Dec 2024 -- Feb 2025}
 {Hospital Pharmacy Practicum}{Seoul, South Korea}
 \resumeItemListStart
-\resumeItem{Completed rotations across 12 specialty departments, participating in drug therapy case reviews and patient counseling under pharmacist supervision.}
+\resumeItem{Completed rotations across 12 specialty departments, participating in medication dispensing, drug therapy case reviews, and patient counseling under pharmacist supervision.}
 \resumeItemListEnd
 \resumeSubheading
 {E-Blue Pharmacy}{Feb 2025 -- Mar 2025}
